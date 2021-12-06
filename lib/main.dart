@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:fruity/auth/login_screen.dart';
 import 'package:fruity/screens/home_screen.dart';
 import 'package:get/get.dart';
-import 'package:fruity/screens/login_screen.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,12 +24,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Colors.green,
-        primaryColorLight: Colors.green,
-        primaryColorDark: Colors.green,
+        primarySwatch: Colors.green,
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
       ),
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }

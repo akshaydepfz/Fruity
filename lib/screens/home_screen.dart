@@ -4,7 +4,7 @@ import 'package:fruity/components/custom_icon.dart';
 import 'package:fruity/database.dart';
 import 'package:fruity/screens/cart_screen.dart';
 import 'package:get/get.dart';
-import 'package:fruity/components/product_card.dart';
+import 'package:fruity/widgets/product_card.dart';
 import 'package:fruity/screens/product_view.dart';
 
 class HomeScreen extends StatefulWidget {

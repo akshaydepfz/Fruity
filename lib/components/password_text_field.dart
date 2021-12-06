@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-class CustomtextField extends StatelessWidget {
+class PasswordTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final IconData icon;
-  const CustomtextField(
+  final Function() iconTap;
+  final bool obsureText;
+  const PasswordTextField(
       {Key? key,
       required this.controller,
       required this.hintText,
-      required this.icon})
+      required this.icon,
+      required this.obsureText,
+      required this.iconTap})
       : super(key: key);
 
   @override
@@ -26,9 +30,17 @@ class CustomtextField extends StatelessWidget {
         horizontal: 10,
       ),
       child: TextField(
+        obscureText: obsureText,
         controller: controller,
         style: TextStyle(color: Colors.grey.shade700),
         decoration: InputDecoration(
+          suffixIcon: IconButton(
+            splashRadius: 1,
+            icon: obsureText
+                ? Icon(Icons.visibility_off)
+                : Icon(Icons.visibility),
+            onPressed: iconTap,
+          ),
           icon: Icon(
             icon,
             size: 18,

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fruity/components/custom_icon.dart';
 import 'package:fruity/components/label_card.dart';
-import 'package:fruity/components/related_products.dart';
+import 'package:fruity/widgets/related_products.dart';
+import 'package:fruity/screens/cart_screen.dart';
+import 'package:get/get.dart';
 
 class ProductView extends StatefulWidget {
   final String productImage;
@@ -17,6 +19,7 @@ class ProductView extends StatefulWidget {
 
 class _ProductViewState extends State<ProductView> {
   int quantity = 1;
+  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +39,20 @@ class _ProductViewState extends State<ProductView> {
                       Navigator.pop(context);
                     },
                   ),
-                  CustomIcon(icon: Icons.favorite, ontap: () {})
+                  CustomIcon(
+                      icon: isFavorite
+                          ? Icons.favorite
+                          : Icons.favorite_border_sharp,
+                      ontap: () {
+                        setState(() {
+                          isFavorite = !isFavorite;
+                        });
+                      })
                 ],
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height / 3,
+              height: MediaQuery.of(context).size.height / 3.5,
               child: Image(
                 image: AssetImage(widget.productImage),
               ),
@@ -197,7 +208,7 @@ class _ProductViewState extends State<ProductView> {
                                 height: 5,
                               ),
                               SizedBox(
-                                height: 80,
+                                height: 100,
                                 child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
                                     itemCount: 5,
@@ -229,7 +240,9 @@ class _ProductViewState extends State<ProductView> {
                               ],
                             ),
                             NeumorphicButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(CartScreen());
+                              },
                               style: NeumorphicStyle(
                                   depth: -4,
                                   color: Colors.green.shade500,

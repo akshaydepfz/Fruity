@@ -13,8 +13,8 @@ class RelatedProduct extends StatelessWidget {
       style: NeumorphicStyle(depth: 3),
       child: Container(
         color: Colors.grey.shade200,
-        height: 80,
-        width: 100,
+        height: 120,
+        width: 140,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
