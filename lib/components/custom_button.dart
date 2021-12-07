@@ -20,9 +20,7 @@ class CustomButton extends StatelessWidget {
       onPressed: ontap,
       child: Container(
         height: 30,
-        child: Center(
-          child: title,
-        ),
+        child: Center(child: title),
       ),
     );
   }
