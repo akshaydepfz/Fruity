@@ -5,11 +5,13 @@ class ProductcardNew extends StatelessWidget {
   final Function() ontap;
   final String productName;
   final String productImage;
+  final String tag;
   const ProductcardNew(
       {Key? key,
       required this.ontap,
       required this.productName,
-      required this.productImage})
+      required this.productImage,
+      required this.tag})
       : super(key: key);
 
   @override
@@ -32,13 +34,16 @@ class ProductcardNew extends StatelessWidget {
                 depth: 1,
                 color: Colors.grey.shade200,
               ),
-              child: Container(
-                height: 95,
-                width: 100,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  image: DecorationImage(
-                    image: AssetImage(productImage),
+              child: Hero(
+                tag: tag,
+                child: Container(
+                  height: 95,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    image: DecorationImage(
+                      image: AssetImage(productImage),
+                    ),
                   ),
                 ),
               ),

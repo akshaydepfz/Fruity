@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fruity/components/custom_icon.dart';
@@ -70,20 +71,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             Container(
               child: Align(
-                child: TabBar(
-                  labelColor: Colors.green,
-                  unselectedLabelColor: Colors.grey.shade400,
-                  isScrollable: true,
-                  controller: _tabController,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  indicator: CircleTabIndicator(color: Colors.green, radius: 4),
-                  tabs: [
-                    Tab(text: 'All'),
-                    Tab(text: 'Fruit'),
-                    Tab(text: 'Vegitable'),
-                    Tab(text: 'Meat'),
-                    Tab(text: 'Diary'),
-                  ],
+                child: FadeInRight(
+                  duration: Duration(seconds: 1),
+                  child: TabBar(
+                    labelColor: Colors.green,
+                    unselectedLabelColor: Colors.grey.shade400,
+                    isScrollable: true,
+                    controller: _tabController,
+                    indicatorSize: TabBarIndicatorSize.label,
+                    indicator:
+                        CircleTabIndicator(color: Colors.green, radius: 4),
+                    tabs: [
+                      Tab(text: 'All'),
+                      Tab(text: 'Fruit'),
+                      Tab(text: 'Vegitable'),
+                      Tab(text: 'Meat'),
+                      Tab(text: 'Diary'),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -94,13 +99,33 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ListView.builder(
                       itemCount: categories.length,
                       itemBuilder: (context, index) {
+                        return FadeInDown(
+                          duration: Duration(seconds: 1),
+                          child: ProductcardNew(
+                            ontap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ProductView(
+                                            tag: categories[index]['tag'],
+                                            productImage: categories[index]
+                                                ['image'],
+                                            productName: categories[index]
+                                                ['name'],
+                                          )));
+                            },
+                            productImage: categories[index]['image'],
+                            productName: categories[index]['name'],
+                            tag: categories[index]['tag'],
+                          ),
+                        );
+                      }),
+                  ListView.builder(
+                      itemCount: categories.length,
+                      itemBuilder: (context, index) {
                         return ProductcardNew(
-                          ontap: () {
-                            Get.to(ProductView(
-                              productImage: categories[index]['image'],
-                              productName: categories[index]['name'],
-                            ));
-                          },
+                          ontap: () {},
+                          tag: categories[index]['tag'],
                           productImage: categories[index]['image'],
                           productName: categories[index]['name'],
                         );
@@ -110,6 +135,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       itemBuilder: (context, index) {
                         return ProductcardNew(
                           ontap: () {},
+                          tag: categories[index]['tag'],
                           productImage: categories[index]['image'],
                           productName: categories[index]['name'],
                         );
@@ -119,6 +145,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       itemBuilder: (context, index) {
                         return ProductcardNew(
                           ontap: () {},
+                          tag: categories[index]['tag'],
                           productImage: categories[index]['image'],
                           productName: categories[index]['name'],
                         );
@@ -128,15 +155,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       itemBuilder: (context, index) {
                         return ProductcardNew(
                           ontap: () {},
-                          productImage: categories[index]['image'],
-                          productName: categories[index]['name'],
-                        );
-                      }),
-                  ListView.builder(
-                      itemCount: categories.length,
-                      itemBuilder: (context, index) {
-                        return ProductcardNew(
-                          ontap: () {},
+                          tag: categories[index]['tag'],
                           productImage: categories[index]['image'],
                           productName: categories[index]['name'],
                         );

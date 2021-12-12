@@ -37,6 +37,9 @@ dependencies:
   google_fonts: ^2.1.0
   get: ^4.5.1
   flutter_neumorphic: ^3.2.0
+  animate_do: ^2.0.0
+  flutter_credit_card: ^3.0.1
+  lottie: ^1.2.1
 
 dev_dependencies:
   flutter_test:
