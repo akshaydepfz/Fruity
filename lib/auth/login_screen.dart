@@ -1,10 +1,6 @@
-import 'dart:ui';
 import 'package:animate_do/animate_do.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fruity/components/custom_button.dart';
-import 'package:fruity/components/password_text_field.dart';
-import 'package:fruity/components/password_text_field.dart';
 import 'package:fruity/components/password_text_field.dart';
 import 'package:fruity/screens/home_screen.dart';
 import 'package:get/get.dart';
@@ -22,7 +18,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   TextEditingController password = TextEditingController();
 
-  bool _isLoading = false;
   bool isVisible = false;
   @override
   Widget build(BuildContext context) {

@@ -1,15 +1,8 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_brand.dart';
-import 'package:flutter_credit_card/credit_card_model.dart';
-import 'package:flutter_credit_card/credit_card_widget.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
-import 'package:flutter_credit_card/glassmorphism_config.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:fruity/components/custom_button.dart';
 import 'package:fruity/components/custom_icon.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class PaymentScreen extends StatefulWidget {
   PaymentScreen({Key? key}) : super(key: key);
