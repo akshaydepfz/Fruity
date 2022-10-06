@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:fruity/constants/app_contsants.dart';
 
 class CartCard extends StatelessWidget {
-  const CartCard({Key? key}) : super(key: key);
+  final String name;
+  final String image;
+  final String quanity;
+  CartCard(
+      {Key? key,
+      required this.name,
+      required this.image,
+      required this.quanity})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return NeumorphicButton(
       onPressed: () {},
-      style: NeumorphicStyle(color: Colors.grey.shade200),
+      style: Appconst.neumorphicStyle,
       margin: EdgeInsets.all(13),
       padding: EdgeInsets.all(10),
       child: Container(
@@ -16,14 +25,11 @@ class CartCard extends StatelessWidget {
         child: Row(
           children: [
             Neumorphic(
-              style: NeumorphicStyle(
-                  depth: -3,
-                  color: Colors.grey.shade200,
-                  shadowLightColorEmboss: Colors.grey.shade200),
+              style: Appconst.embbedNeumorphicStyle,
               child: Container(
                 height: 80,
                 width: 80,
-                child: Image.asset('assets/images/orange.png'),
+                child: Image.asset(image),
               ),
             ),
             Container(
@@ -31,7 +37,7 @@ class CartCard extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Orange',
+                    name,
                     style: TextStyle(fontSize: 18, color: Colors.green),
                   ),
                   Text(
@@ -47,7 +53,7 @@ class CartCard extends StatelessWidget {
               child: Container(),
             ),
             Text(
-              'X2',
+              'X$quanity',
               style: TextStyle(color: Colors.grey.shade600, fontSize: 20),
             ),
             SizedBox(

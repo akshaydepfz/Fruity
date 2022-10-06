@@ -1,4 +1,5 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:fruity/constants/app_contsants.dart';
 
 class ProductcardNew extends StatelessWidget {
   final Function() ontap;
@@ -17,13 +18,9 @@ class ProductcardNew extends StatelessWidget {
   Widget build(BuildContext context) {
     return NeumorphicButton(
       margin: EdgeInsets.all(10),
-      style: NeumorphicStyle(
-        depth: 2,
-        color: Colors.grey.shade200,
-      ),
+      style: Appconst.neumorphicStyle,
       onPressed: ontap,
       child: Container(
-        color: Colors.grey.shade200,
         height: 100,
         width: double.infinity,
         child: Row(
@@ -31,7 +28,6 @@ class ProductcardNew extends StatelessWidget {
             Neumorphic(
               style: NeumorphicStyle(
                 depth: 1,
-                color: Colors.grey.shade200,
               ),
               child: Hero(
                 tag: tag,
@@ -39,7 +35,7 @@ class ProductcardNew extends StatelessWidget {
                   height: 95,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
+                    color: Appconst.BackgroundColor,
                     image: DecorationImage(
                       image: AssetImage(productImage),
                     ),

@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fruity/components/custom_button.dart';
 import 'package:fruity/components/password_text_field.dart';
+import 'package:fruity/constants/app_contsants.dart';
 import 'package:fruity/screens/home_screen.dart';
 import 'package:get/get.dart';
 import '../components/textfield.dart';
@@ -22,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Appconst.BackgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -56,8 +57,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: EdgeInsets.all(0),
                   onPressed: () {},
                   style: NeumorphicStyle(
+                    intensity: 100,
                     depth: 3,
-                    color: Colors.grey.shade200,
+                    shadowLightColor: Color.fromRGBO(243, 243, 245, 1),
+                    shadowDarkColor: Color.fromRGBO(195, 196, 201, 1),
                     boxShape: NeumorphicBoxShape.circle(),
                   ),
                   child: Container(

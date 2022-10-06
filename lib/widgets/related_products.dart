@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:fruity/constants/app_contsants.dart';
 
 class RelatedProduct extends StatelessWidget {
   final String name;
@@ -15,9 +16,8 @@ class RelatedProduct extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 2, horizontal: 6),
       padding: EdgeInsets.all(0),
       onPressed: onTap,
-      style: NeumorphicStyle(depth: 3),
+      style: Appconst.neumorphicStyle,
       child: Container(
-        color: Colors.grey.shade200,
         height: 120,
         width: 140,
         child: Column(

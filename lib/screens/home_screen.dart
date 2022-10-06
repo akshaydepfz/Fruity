@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fruity/components/custom_icon.dart';
+import 'package:fruity/constants/app_contsants.dart';
 import 'package:fruity/database.dart';
 import 'package:fruity/screens/cart_screen.dart';
 import 'package:get/get.dart';
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 5, vsync: this);
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Appconst.BackgroundColor,
       body: Container(
         margin: EdgeInsets.only(top: 35),
         padding: EdgeInsets.all(15),
@@ -43,8 +44,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             Neumorphic(
               style: NeumorphicStyle(
-                depth: 4,
-                color: Colors.grey.shade200,
+                color: Color.fromRGBO(230, 231, 238, 1),
+                intensity: 100,
+                depth: 5,
+                shadowLightColor: Color.fromRGBO(243, 243, 245, 1),
+                shadowDarkColor: Color.fromRGBO(195, 196, 201, 1),
                 boxShape: NeumorphicBoxShape.stadium(),
                 shadowDarkColorEmboss: Colors.grey.shade400,
                 shadowLightColorEmboss: Colors.white70,
@@ -122,41 +126,53 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ListView.builder(
                       itemCount: categories.length,
                       itemBuilder: (context, index) {
-                        return ProductcardNew(
-                          ontap: () {},
-                          tag: categories[index]['tag'],
-                          productImage: categories[index]['image'],
-                          productName: categories[index]['name'],
+                        return FadeInDown(
+                          duration: Duration(seconds: 1),
+                          child: ProductcardNew(
+                            ontap: () {},
+                            tag: categories[index]['tag'],
+                            productImage: categories[index]['image'],
+                            productName: categories[index]['name'],
+                          ),
                         );
                       }),
                   ListView.builder(
                       itemCount: categories.length,
                       itemBuilder: (context, index) {
-                        return ProductcardNew(
-                          ontap: () {},
-                          tag: categories[index]['tag'],
-                          productImage: categories[index]['image'],
-                          productName: categories[index]['name'],
+                        return FadeInDown(
+                          duration: Duration(seconds: 1),
+                          child: ProductcardNew(
+                            ontap: () {},
+                            tag: categories[index]['tag'],
+                            productImage: categories[index]['image'],
+                            productName: categories[index]['name'],
+                          ),
                         );
                       }),
                   ListView.builder(
                       itemCount: categories.length,
                       itemBuilder: (context, index) {
-                        return ProductcardNew(
-                          ontap: () {},
-                          tag: categories[index]['tag'],
-                          productImage: categories[index]['image'],
-                          productName: categories[index]['name'],
+                        return FadeInDown(
+                          duration: Duration(seconds: 1),
+                          child: ProductcardNew(
+                            ontap: () {},
+                            tag: categories[index]['tag'],
+                            productImage: categories[index]['image'],
+                            productName: categories[index]['name'],
+                          ),
                         );
                       }),
                   ListView.builder(
                       itemCount: categories.length,
                       itemBuilder: (context, index) {
-                        return ProductcardNew(
-                          ontap: () {},
-                          tag: categories[index]['tag'],
-                          productImage: categories[index]['image'],
-                          productName: categories[index]['name'],
+                        return FadeInDown(
+                          duration: Duration(seconds: 1),
+                          child: ProductcardNew(
+                            ontap: () {},
+                            tag: categories[index]['tag'],
+                            productImage: categories[index]['image'],
+                            productName: categories[index]['name'],
+                          ),
                         );
                       }),
                 ],

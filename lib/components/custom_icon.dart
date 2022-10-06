@@ -13,11 +13,11 @@ class CustomIcon extends StatelessWidget {
     return NeumorphicButton(
       onPressed: ontap,
       style: NeumorphicStyle(
-          depth: 4,
-          color: Colors.grey.shade200,
-          shape: NeumorphicShape.flat,
-          shadowLightColor: Colors.white,
-          shadowDarkColor: Colors.grey.shade500,
+          color: Color.fromRGBO(230, 231, 238, 1),
+          intensity: 100,
+          depth: 5,
+          shadowLightColor: Color.fromRGBO(243, 243, 245, 1),
+          shadowDarkColor: Color.fromRGBO(195, 196, 201, 1),
           boxShape: NeumorphicBoxShape.circle()),
       padding: const EdgeInsets.all(12.0),
       child: Center(

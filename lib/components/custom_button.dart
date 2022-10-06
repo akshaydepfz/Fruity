@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:fruity/constants/app_contsants.dart';
 
 class CustomButton extends StatelessWidget {
   final Function() ontap;
@@ -11,10 +11,11 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return NeumorphicButton(
       style: NeumorphicStyle(
-        shadowLightColor: Colors.white,
-        shadowDarkColor: Colors.grey.shade400,
-        depth: 4,
-        color: Colors.grey.shade200,
+        intensity: 100,
+        depth: 3,
+        color: Appconst.BackgroundColor,
+        shadowLightColor: Color.fromRGBO(243, 243, 245, 1),
+        shadowDarkColor: Color.fromRGBO(195, 196, 201, 1),
         boxShape: NeumorphicBoxShape.stadium(),
       ),
       onPressed: ontap,

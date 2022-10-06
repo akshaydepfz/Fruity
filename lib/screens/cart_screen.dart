@@ -1,5 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:fruity/constants/app_contsants.dart';
+import 'package:fruity/database.dart';
 import 'package:fruity/screens/payment_screen.dart';
 import 'package:get/get.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -12,7 +14,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Appconst.BackgroundColor,
       body: Container(
         child: Column(
           children: [
@@ -34,15 +36,22 @@ class CartScreen extends StatelessWidget {
             ),
             Expanded(
                 child: ListView.builder(
-                    itemCount: 5,
+                    itemCount: 3,
                     itemBuilder: (context, index) {
                       return FadeInDown(
                           duration: Duration(milliseconds: 1500),
-                          child: CartCard());
+                          child: CartCard(
+                            image: categories[index]['image'],
+                            name: categories[index]['name'],
+                            quanity: '4',
+                          ));
                     })),
             FadeInUp(
               child: Neumorphic(
                 style: NeumorphicStyle(
+                  intensity: 100,
+                  shadowLightColorEmboss: Color.fromRGBO(243, 243, 245, 1),
+                  shadowDarkColorEmboss: Color.fromRGBO(195, 196, 201, 1),
                   depth: 3,
                   boxShape: NeumorphicBoxShape.roundRect(
                     BorderRadius.only(
@@ -50,7 +59,6 @@ class CartScreen extends StatelessWidget {
                       topRight: Radius.circular(25),
                     ),
                   ),
-                  color: Colors.grey.shade200,
                 ),
                 child: Container(
                   padding: EdgeInsets.all(15),

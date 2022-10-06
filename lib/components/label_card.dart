@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:fruity/constants/app_contsants.dart';
 
 class TileCard extends StatelessWidget {
   final String label;
@@ -12,10 +13,7 @@ class TileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Neumorphic(
-      style: NeumorphicStyle(
-        depth: 3,
-        color: Colors.grey.shade200,
-      ),
+      style: Appconst.neumorphicStyle,
       child: Container(
         width: 100,
         child: Row(

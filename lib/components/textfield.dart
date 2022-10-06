@@ -18,9 +18,10 @@ class CustomtextField extends StatelessWidget {
       style: NeumorphicStyle(
         depth: -3,
         boxShape: NeumorphicBoxShape.stadium(),
-        shadowDarkColorEmboss: Colors.grey.shade400,
-        shadowLightColorEmboss: Colors.white,
-        color: Colors.grey.shade200,
+        color: Color.fromRGBO(230, 231, 238, 1),
+        intensity: 100,
+        shadowLightColorEmboss: Color.fromRGBO(243, 243, 245, 1),
+        shadowDarkColorEmboss: Color.fromRGBO(195, 196, 201, 1),
       ),
       padding: EdgeInsets.symmetric(
         horizontal: 10,

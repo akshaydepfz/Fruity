@@ -3,6 +3,7 @@ import 'package:flutter_credit_card/credit_card_brand.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fruity/components/custom_icon.dart';
+import 'package:fruity/constants/app_contsants.dart';
 
 class PaymentScreen extends StatefulWidget {
   PaymentScreen({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Appconst.BackgroundColor,
       body: Container(
         child: Column(
           children: [
@@ -80,8 +81,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   children: [
                     FadeInUp(
                       child: Neumorphic(
-                        style: NeumorphicStyle(
-                            depth: -3, color: Colors.grey.shade200),
+                        style: Appconst.embbedNeumorphicStyle,
                         margin: EdgeInsets.all(15),
                         child: CreditCardForm(
                           formKey: formKey,

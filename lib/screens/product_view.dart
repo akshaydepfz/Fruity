@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fruity/components/custom_icon.dart';
 import 'package:fruity/components/label_card.dart';
+import 'package:fruity/constants/app_contsants.dart';
 import 'package:fruity/database.dart';
 import 'package:fruity/widgets/related_products.dart';
 import 'package:fruity/screens/cart_screen.dart';
@@ -28,7 +29,7 @@ class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Appconst.BackgroundColor,
       body: Container(
         margin: EdgeInsets.only(top: 35),
         child: Column(
@@ -74,6 +75,10 @@ class _ProductViewState extends State<ProductView> {
                 child: Neumorphic(
                   style: NeumorphicStyle(
                     depth: 3,
+                    color: Color.fromRGBO(230, 231, 238, 1),
+                    intensity: 100,
+                    shadowLightColorEmboss: Color.fromRGBO(243, 243, 245, 1),
+                    shadowDarkColorEmboss: Color.fromRGBO(195, 196, 201, 1),
                     boxShape: NeumorphicBoxShape.roundRect(
                       BorderRadius.only(
                         topLeft: Radius.circular(40),
@@ -82,7 +87,7 @@ class _ProductViewState extends State<ProductView> {
                     ),
                   ),
                   child: Container(
-                    color: Colors.grey.shade200,
+                    color: Appconst.BackgroundColor,
                     padding: EdgeInsets.all(20),
                     width: double.infinity,
                     child: Column(
@@ -136,7 +141,7 @@ class _ProductViewState extends State<ProductView> {
                                       depth: -4,
                                       boxShape: NeumorphicBoxShape.stadium()),
                                   child: Container(
-                                    color: Colors.grey.shade200,
+                                    color: Appconst.BackgroundColor,
                                     height: 40,
                                     width: 165,
                                     child: Row(
@@ -152,7 +157,14 @@ class _ProductViewState extends State<ProductView> {
                                             }
                                           },
                                           style: NeumorphicStyle(
-                                              color: Colors.grey.shade200,
+                                              depth: 3,
+                                              intensity: 100,
+                                              shadowLightColorEmboss:
+                                                  Color.fromRGBO(
+                                                      243, 243, 245, 1),
+                                              shadowDarkColorEmboss:
+                                                  Color.fromRGBO(
+                                                      195, 196, 201, 1),
                                               boxShape:
                                                   NeumorphicBoxShape.circle()),
                                           child: Icon(
@@ -179,7 +191,14 @@ class _ProductViewState extends State<ProductView> {
                                             });
                                           },
                                           style: NeumorphicStyle(
-                                              color: Colors.grey.shade200,
+                                              depth: 3,
+                                              intensity: 100,
+                                              shadowLightColorEmboss:
+                                                  Color.fromRGBO(
+                                                      243, 243, 245, 1),
+                                              shadowDarkColorEmboss:
+                                                  Color.fromRGBO(
+                                                      195, 196, 201, 1),
                                               boxShape:
                                                   NeumorphicBoxShape.circle()),
                                           child: Icon(
@@ -209,12 +228,15 @@ class _ProductViewState extends State<ProductView> {
                           child: Container(
                             child: Column(
                               children: [
+                                SizedBox(
+                                  height: 10,
+                                ),
                                 Align(
                                   alignment: Alignment.topLeft,
                                   child: Text(
                                     'Related Products :',
                                     style: TextStyle(
-                                        color: Colors.green.shade500,
+                                        color: Colors.grey.shade700,
                                         fontSize: 18),
                                   ),
                                 ),
